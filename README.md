@@ -1,7 +1,7 @@
 # Add Reviewers
-[![Tests](https://github.com/Madrapps/add-reviewers/actions/workflows/check.yml/badge.svg)](https://github.com/Madrapps/add-reviewers/actions/workflows/check.yml)
+[![Tests](https://github.com/dvirdung/github-action-add-reviewers/actions/workflows/check.yml/badge.svg)](https://github.com/dvirdung/github-action-add-reviewers/actions/workflows/check.yml)
 
-Github action that adds Reviewers to the Pull Request
+Github action that adds individual Reviewers or Team Reviewers to the Pull Request
 
 ## Usage
 
@@ -11,10 +11,12 @@ Create a workflow `.yml` file in your repositories `.github/workflows` directory
 ### Inputs
 
 * `token` - [**required**] Github personal token to add commits to Pull Request
-* `reviewers` - [**required**] Comma separated list of reviewers [eg. john,kramer,seinfeld]
+* `reviewers` - [*optional*] Comma separated list of reviewers [eg. john,kramer,seinfeld]
+* `team_reviewers` - [*optional*] Comma separated list of teams to review the PR [eg. team-octocat,core,dba]
 * `re-request-when-changes-requested` - [*optional*] If true, when a reviewer has requested for changes, pushing a new commit to this PR will Re-request a review from them
 * `re-request-when-approved` - [*optional*] If true, when a reviewer has approved, pushing a new commit to this PR will Re-request a review from them
 
+Either `reviewers` or `team_reviewers` must be specified.
 
 ### Example Workflow
 
@@ -33,6 +35,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         reviewers: john,kramer,seinfeld
+        team_reviewers: team-octocat,core,dba
         re-request-when-approved: true
         re-request-when-changes-requested: true
 ```
