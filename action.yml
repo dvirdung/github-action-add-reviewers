@@ -5,8 +5,11 @@ inputs:
     description: "Github personal token to add reviewers to pull request"
     required: true
   reviewers:
-    description: "Comma separated list of reviewers"
+    description: "Comma separated list of users to request reviews"
     required: true
+  team_reviewers:
+    description: 'Comma-separated list of teams to request reviews from'
+    required: false
   re-request-when-changes-requested:
     description: "When a reviewer has requested for changes, Re-request review from them"
     required: false
