@@ -4,6 +4,7 @@ const github = require('@actions/github');
 async function action() {
     try {
         const reviewers = core.getInput('reviewers').split(",");
+        const teamReviewers = core.getInput('team_reviewers').split(",").filter(team => team.trim() !== '');
         const reRequestWhenChangesRequested = (core.getInput('re-request-when-changes-requested') === 'true');
         const reRequestWhenApproved = (core.getInput('re-request-when-approved') === 'true');
         const debugMode = (core.getInput('debug-mode') === 'true');
@@ -77,6 +78,11 @@ async function action() {
             pull_number: prNumber,
             reviewers: finalReviewers,
         };
+        if (teamReviewers.length > 0) {
+            params.team_reviewers = teamReviewers;
+        }
+
+        
         await client.pulls.requestReviewers(params);
     } catch (error) {
         core.setFailed(error);
