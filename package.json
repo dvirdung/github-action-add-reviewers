@@ -1,14 +1,14 @@
 {
-  "name": "add-reviewer-action",
+  "name": "github-action-add-reviewers",
   "version": "1.0.0",
-  "description": "Github action that add Reviewers to the Pull Request",
+  "description": "Github action that add Reviewers or Team Reviewers to the Pull Request",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com-thsaravana:Madrapps/add-reviewer-action.git"
+    "url": "git@github.com-thsaravana:dvirdung/github-action-add-reviewers.git"
   },
   "keywords": [],
   "author": "",
