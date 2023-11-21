@@ -1,7 +1,7 @@
 # Add Reviewers
 [![Tests](https://github.com/dvirdung/github-action-add-reviewers/actions/workflows/check.yml/badge.svg)](https://github.com/dvirdung/github-action-add-reviewers/actions/workflows/check.yml)
 
-Github action that adds individual Reviewers or Team Reviewers to the Pull Request
+Github action that adds individual Reviewers or Team Reviewers to the Pull Request, forked from [https://github.com/Madrapps/add-reviewers](https://github.com/Madrapps/add-reviewers/).
 
 ## Usage
 
